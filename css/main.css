@@ -338,6 +338,19 @@
   flex-shrink: 0;
 }
 
+.last-result_team:last-child.__cart1:before {
+  margin-left: 0;
+  margin-right: 3px;
+  order: -1;
+}
+
+.last-result_team:last-child.__cart2:before,
+.last-result_team:last-child.__cart2:after {
+  margin-left: 0;
+  margin-right: 3px;
+  order: -1;
+}
+
 .league_head {
   display: flex;
   align-items: center;
