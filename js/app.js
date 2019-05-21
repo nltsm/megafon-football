@@ -11,47 +11,76 @@ app.addModule('data-table', function () {
 			$(this).closest('.data-table_item').toggleClass('active');
 			
 			$('.data-table-popup').addClass('active');
-			
-			fillData($(this).closest('.data-table_item'));
 		});
 		
-		$('.data-table-popup_back').click(function () {
-			$('.data-table-popup').removeClass('active');
-		});
+		withoutPopup();
 	};
 	
-	function fillData(table) {
-		var popupTable = $('.data-table-popup');
-		var head = popupTable.find('.data-table_head');
+	function withoutPopup(command) {
+		if (!command) {
+			command = $('.data-table_command')
+		}
 		
-		head.html(table.find('.data-table_head h3').clone());
-		
-		$('.data-table-popup_body').html('');
-		
-		table.find('.data-table_row').each(function () {
-			var _ = $(this);
-			var row = $('<a />').addClass('data-table-popup_row');
-			var teams = $('<div />').addClass('data-table-popup_teams');
-			var results = $('<div />').addClass('data-table-popup_results');
-			var result1 = $('<div />').addClass('data-table-popup_result');
-			var result2 = $('<div />').addClass('data-table-popup_result');
-			var time = $('<div />').addClass('data-table-popup_time');
-			var info = $('<div />').addClass('data-table-popup_info');
+		command.each(function () {
+			var command = $('<div />').addClass('data-table_command-mobile');
 			
-			row.attr('href', _.attr('href'));
+			$(this).after(command);
+
+			$(this).find('.data-table_row').each(function () {
+				var _ = $(this);
+				var row = $('<a />').addClass('data-table-popup_row');
+				var started = _.attr('data-started') === 'true';
+
+				var teams = $('<div />').addClass('data-table-popup_teams');
+				var cnt = $('<div />').addClass('data-table-popup_cnt');
+				var results = $('<div />').addClass('data-table-popup_results');
+				var result1 = $('<div />').addClass('data-table-popup_result');
+				var result2 = $('<div />').addClass('data-table-popup_result');
+				var time = $('<div />').addClass('data-table-popup_time');
+
+				row.attr('href', _.attr('href'));
+
+				teams.html(_.find('.data-table_team').clone());
+				result1.html(_.find('.data-table_result strong:first-child').html());
+				result2.html(_.find('.data-table_result strong:last-child').html());
+				time.html(_.find('.data-table_time').clone());
+				cnt.html(_.find('.data-table_cnt').clone());
+
+				results.append(result1, result2);
+				row.append(teams, cnt, results, time);
+
+				command.append(row);
+
+				if (started) {
+					results.addClass('active');
+					time.removeClass('active');
+				} else {
+					results.removeClass('active');
+					time.addClass('active');
+				}
+
+				if (_.find('.data-table_result').hasClass('__online')) {
+					result1.addClass('__online');
+					result2.addClass('__online');
+				} else {
+					result1.removeClass('__online');
+					result2.removeClass('__online');
+				}
+			});
 			
-			teams.html(_.find('.data-table_team').clone());
-			result1.html(_.find('.data-table_result strong:first-child').html());
-			result2.html(_.find('.data-table_result strong:last-child').html());
-			time.html(_.find('.data-table_time').clone());
-			info.html(_.find('.data-table_info').clone());
+			var link = $(this).find('.link-block');
 			
-			results.append(result1, result2);
-			row.append(teams, results, time, info);
-			
-			$('.data-table-popup_body').append(row);
+			if (link.length) {
+				command.append(link.clone())
+			}
 		});
 	}
+	
+	this.reset = function (item) {
+		item.find('.data-table_command-mobile').remove();
+		
+		withoutPopup(item.find('.data-table_command'));
+	};
 });
 app.addModule('res-tab', function () {
 	this.init = function () {

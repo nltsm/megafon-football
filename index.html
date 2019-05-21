@@ -48,8 +48,7 @@
 	<blockquote>
 		<span style="color: red;">НОВОЕ:</span><br>
 		1) Заменить стили<br>
-		2) Для карточек на главной, если нужна одна карточка красная, добавить класс "__cart1", если 2 карточки - класс "__cart2" у блока ".last-result_team"<br>
-		3) Если у команды нет флага, добавить класс "__no-flag" у блока ".player_command"
+		2) На главной вместо блока .last-result_tabs скопировать блок .data-table из лиги, например
 	</blockquote>
 	
 	<h2>Страницы</h2>
@@ -61,11 +60,6 @@
 				1) Заменить весь блок .result на новый блок .res<br>
 				2) все табы имеют одинаковое содержание (но не уверен, уточни)<br>
 				3) блок после .data-table-popup просто вставить, это нужно для адаптивности, но заполнять его не нужно, делается через js
-			</blockquote>
-			
-			<blockquote>
-				<span style="color: red;">НОВОЕ:</span>
-				добавлены карточки
 			</blockquote>
 		</li>
 		
@@ -87,5 +81,25 @@
 			</blockquote>
 		</li>
 	</ol>
+	
+	<blockquote>
+		<span style="color: red;">ВАЖНО:</span><br>
+		
+		после клика на кнопку "показать еще", если она есть, после загрузки дополнительных матчей нужно вызвать функцию "app.getModule('data-table').reset(  $('#id-item')  )"
+		<br>
+		где #id-item - это блок с классом "data-table_item"<br>
+		можно не использовать id, а получить этот блок после клика на кнопку<br>
+		<br><br>
+		'показать еще'.click(function() {<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;var itemBlock = $(this).closest('.data-table_item')<br>
+		<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;app.getModule('data-table').reset(  itemBlock  )<br>
+		})<br>
+		
+		<br>
+		
+		это нужно, чтобы моб версия обновилась, сделал через js, чтобы в html не было дублирования данных
+			
+	</blockquote>
 </body>
 </html>

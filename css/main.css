@@ -114,38 +114,50 @@
 .data-table-popup_row {
   display: flex;
   text-decoration: none;
+  border-bottom: 1px solid #eee;
 }
 
 .data-table-popup_teams {
   flex-basis: 0;
   flex-grow: 1;
-  border-bottom: 1px solid #eee;
-  border-right: 1px solid #eee;
   padding: 5px;
 }
 
 .data-table-popup_results {
-  width: 30px;
+  width: 50px;
   flex-shrink: 0;
   padding: 5px;
   border-bottom: 1px solid #eee;
-  border-right: 1px solid #eee;
+  display: none;
+  border-left: 1px solid #eee;
+}
+
+.data-table-popup_results.active {
+  display: block;
 }
 
 .data-table-popup_result {
   font: 16px 'MegaFonGraphikLCBold';
-  color: red;
   padding: 3px 0;
   text-align: center;
+  color: #000;
+}
+
+.data-table-popup_result.__online {
+  color: red;
 }
 
 .data-table-popup_time {
-  display: flex;
   justify-content: center;
   align-items: center;
   padding: 5px;
-  border-bottom: 1px solid #eee;
-  border-right: 1px solid #eee;
+  display: none;
+  width: 50px;
+  border-left: 1px solid #eee;
+}
+
+.data-table-popup_time.active {
+  display: flex;
 }
 
 .data-table-popup_info {
@@ -157,8 +169,10 @@
   border-right: 1px solid #eee;
 }
 
-.data-table_item {
-  border-bottom: 1px solid #eee;
+.data-table-popup_cnt {
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
 }
 
 .data-table_item:first-child {
@@ -171,6 +185,7 @@
   background: #f2f2f2;
   padding-left: 5px;
   cursor: pointer;
+  border-bottom: 1px solid #eee;
 }
 
 .data-table_head h3 {
@@ -232,11 +247,18 @@
   transform: rotate(-270deg);
 }
 
-.data-table_body {
+.data-table_body,
+.data-table_command {
   display: none;
 }
 
-.data-table_item.active .data-table_body {
+.data-table_body.active,
+.data-table_command.active {
+  display: block;
+}
+
+.data-table_item.active .data-table_body,
+.data-table_item.active .data-table_command {
   display: block;
 }
 
@@ -283,6 +305,10 @@
   color: #a5a5a5;
 }
 
+.data-table_time span {
+  margin-left: 8px;
+}
+
 .data-table_info {
   text-align: right;
   font: 15px 'MegaFonGraphikLCRegular';
@@ -313,6 +339,28 @@
 
 .data-table_result strong {
   font-family: 'MegaFonGraphikLCBold';
+}
+
+.data-table_result.__online {
+  color: red;
+}
+
+.data-table_cnt {
+  color: red;
+  font: 16px 'MegaFonGraphikLCRegular';
+}
+
+.data-table_command-mobile {
+  display: none;
+}
+
+.data-table_item.active .data-table_command-mobile {
+  display: none;
+}
+
+.data-table.__visible .data-table_command-mobile {
+  display: none;
+  border-top: 1px solid #eee;
 }
 
 .last-result_team.__cart1:before {
@@ -410,7 +458,7 @@
 }
 
 .live-command_main {
-  padding: 10px;
+  padding: 30px 0;
 }
 
 .live-command_row {
@@ -730,11 +778,6 @@
     display: block;
   }
 
-  .data-table_head {
-    padding: 8px;
-    background: none;
-  }
-
   .data-table_head.__dark {
     background: #f2f2f2;
   }
@@ -744,15 +787,24 @@
   }
 
   .data-table_close {
-    display: none;
+    width: 50px;
   }
 
   .data-table_count {
     display: block;
   }
 
-  .data-table_item.active .data-table_body {
+  .data-table_item.active .data-table_body,
+  .data-table_item.active .data-table_command {
     display: none;
+  }
+
+  .data-table_command {
+    display: none;
+  }
+
+  .data-table_time span {
+    display: block;
   }
 
   .data-table_time {
@@ -765,6 +817,23 @@
 
   .data-table_team {
     padding: 2px 0;
+    font-size: 14px;
+  }
+
+  .data-table_command-mobile .data-table_time {
+    font-size: 11px;
+  }
+
+  .data-table_item.active .data-table_command-mobile {
+    display: block;
+  }
+
+  .data-table.__visible .data-table_command {
+    display: none;
+  }
+
+  .data-table.__visible .data-table_command-mobile {
+    display: block;
   }
 
   .player_heading {
@@ -857,7 +926,6 @@
   }
 
   .res-table_cart {
-    margin-right: 3px;
     flex-shrink: 0;
     order: -1;
   }
