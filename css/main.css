@@ -444,6 +444,10 @@
   text-align: center;
 }
 
+.player_command.__no-flag {
+  padding-left: 23px;
+}
+
 .res-tab_head {
   display: flex;
 }
@@ -748,6 +752,22 @@
 
   .data-table_team {
     padding: 2px 0;
+  }
+
+  .player_heading {
+    display: none;
+  }
+
+  .player_col:nth-child(n + 2) {
+    display: none;
+  }
+
+  .player_col:nth-child(2) {
+    flex-grow: 1;
+  }
+
+  .player_col:nth-child(1) {
+    width: 10%;
   }
 
   .res-tab_head-list {
