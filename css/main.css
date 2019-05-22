@@ -137,7 +137,7 @@
 }
 
 .data-table-popup_result {
-  font: 16px 'MegaFonGraphikLCBold';
+  font: 16px 'MegaFonGraphikLCMedium';
   padding: 3px 0;
   text-align: center;
   color: #000;
@@ -264,6 +264,7 @@
 
 .data-table_row {
   display: flex;
+  align-items: center;
   border-bottom: 1px solid #eee;
   text-decoration: none;
   padding: 10px 5px;
