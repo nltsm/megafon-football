@@ -301,12 +301,12 @@
 }
 
 .data-table_time {
-  font: 15px 'MegaFonGraphikLCRegular';
+  font: 14px 'MegaFonGraphikLCRegular';
   color: #a5a5a5;
 }
 
 .data-table_time span {
-  margin-left: 8px;
+  display: block;
 }
 
 .data-table_info {
@@ -803,10 +803,6 @@
     display: none;
   }
 
-  .data-table_time span {
-    display: block;
-  }
-
   .data-table_time {
     font-size: 12px;
   }
@@ -840,7 +836,7 @@
     display: none;
   }
 
-  .player_col:nth-child(n + 2) {
+  .player_col:nth-child(n + 3) {
     display: none;
   }
 
