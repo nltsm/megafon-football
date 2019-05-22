@@ -778,6 +778,10 @@
     display: block;
   }
 
+  .data-table.__command-page .data-table-popup_time {
+    display: flex;
+  }
+
   .data-table_head.__dark {
     background: #f2f2f2;
   }
