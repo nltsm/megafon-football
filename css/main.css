@@ -1054,6 +1054,10 @@
     display: block;
   }
 
+  .data-table_item.active .data-table_command.__show {
+    display: block !important;
+  }
+
   .player_heading {
     display: none;
   }
