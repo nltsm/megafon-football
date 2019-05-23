@@ -7,7 +7,7 @@ app.addModule('calendar', function () {
 });
 app.addModule('data-table', function () {
 	this.init = function () {
-		$('.data-table_head').click(function () {
+		$('.data-table_close').click(function () {
 			$(this).closest('.data-table_item').toggleClass('active');
 			
 			$('.data-table-popup').addClass('active');
@@ -82,6 +82,16 @@ app.addModule('data-table', function () {
 		withoutPopup(item.find('.data-table_command'));
 	};
 });
+app.addModule('news-slider', function () {
+	this.init = function () {
+		$('.news-slider').slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 5000
+		})
+	};
+});
 app.addModule('res-tab', function () {
 	this.init = function () {
 		$('.res-tab_head-list a').click(function (e) {
@@ -99,7 +109,7 @@ app.addModule('res-tab', function () {
 });
 app.addModule('res', function () {
 	this.init = function () {
-		var list = $('.res_listк');
+		var list = $('.res_list');
 
 		var block = createBlock(list);
 
