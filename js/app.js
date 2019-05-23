@@ -30,6 +30,7 @@ app.addModule('data-table', function () {
 				var _ = $(this);
 				var row = $('<a />').addClass('data-table-popup_row');
 				var started = _.attr('data-started') === 'true';
+				var hasScore = _.attr('data-score') === 'true';
 
 				var teams = $('<div />').addClass('data-table-popup_teams');
 				var cnt = $('<div />').addClass('data-table-popup_cnt');
@@ -52,13 +53,17 @@ app.addModule('data-table', function () {
 				command.append(row);
 
 				if (started) {
-					results.addClass('active');
 					time.removeClass('active');
 					cnt.addClass('active');
 				} else {
-					results.removeClass('active');
 					time.addClass('active');
 					cnt.removeClass('active');
+				}
+				
+				if (hasScore) {
+					results.addClass('active');
+				} else {
+					results.removeClass('active');
 				}
 
 				if (_.find('.data-table_result').hasClass('__online')) {
