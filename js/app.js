@@ -54,9 +54,11 @@ app.addModule('data-table', function () {
 				if (started) {
 					results.addClass('active');
 					time.removeClass('active');
+					cnt.addClass('active');
 				} else {
 					results.removeClass('active');
 					time.addClass('active');
+					cnt.removeClass('active');
 				}
 
 				if (_.find('.data-table_result').hasClass('__online')) {
