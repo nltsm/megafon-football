@@ -31,7 +31,7 @@ app.addModule('data-table', function () {
 			$(this).find('.data-table_row').each(function () {
 				var _ = $(this);
 				var row = $('<a />').addClass('data-table-popup_row');
-				var started = _.attr('data-started') === 'true';
+				var started = _.attr('data-active') === 'true';
 				var hasScore = _.attr('data-score') === 'true';
 
 				var teams = $('<div />').addClass('data-table-popup_teams');
