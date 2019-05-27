@@ -6,6 +6,8 @@ app.addModule('calendar', function () {
 	};
 });
 app.addModule('data-table', function () {
+	var self = this;
+	
 	this.init = function () {
 		$('.data-table_close').click(function () {
 			$(this).closest('.data-table_item').toggleClass('active');
@@ -88,6 +90,16 @@ app.addModule('data-table', function () {
 		
 		withoutPopup(item.find('.data-table_command'));
 	};
+	
+	this.updateMobile = function () {
+		$('.data-table_command-mobile').remove();
+		
+		withoutPopup();
+	};
+	
+	window.updateMobileDataTable = function () {
+		self.updateMobile();
+	}
 });
 app.addModule('news-slider', function () {
 	this.init = function () {
