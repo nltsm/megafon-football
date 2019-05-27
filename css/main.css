@@ -529,6 +529,13 @@
   font: 16px 'MegaFonGraphikLCRegular';
 }
 
+.data-table_cnt span {
+  animation-name: blinker;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+  animation-duration: 2s;
+}
+
 .data-table_command-mobile {
   display: none;
 }
@@ -540,6 +547,16 @@
 .data-table.__visible .data-table_command-mobile {
   display: none;
   border-top: 1px solid #eee;
+}
+
+@keyframes blinker {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
 
 .last-result_team.__cart1:before {
