@@ -108,7 +108,7 @@ app.addModule('news-slider', function () {
 			slidesToScroll: 1,
 			autoplay: true,
 			autoplaySpeed: 5000
-		})
+		});
 	};
 });
 app.addModule('res-tab', function () {
