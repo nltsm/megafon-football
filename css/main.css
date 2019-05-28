@@ -716,6 +716,11 @@
   color: #000;
 }
 
+.news-slider_item img {
+  display: block;
+  margin: 0 auto 20px;
+}
+
 .news-slider_item:hover {
   opacity: 0.8;
 }
