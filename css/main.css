@@ -973,6 +973,114 @@
   display: none;
 }
 
+.timeline_row {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  position: relative;
+}
+
+.timeline_row:after {
+  content: '';
+  width: 0;
+  height: 100%;
+  border-left: 1px dashed #ccc;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: -1;
+}
+
+.timeline_row:last-child:after {
+  display: none;
+}
+
+.timeline_left {
+  width: 1%;
+  flex-grow: 1;
+  text-align: right;
+}
+
+.timeline_center {
+  width: 40px;
+  margin: 0 20px;
+  flex-shrink: 0;
+}
+
+.timeline_right {
+  width: 1%;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.timeline_name {
+  font: 18px 'MegaFonGraphikLCRegular';
+  color: #000;
+  line-height: 22px;
+}
+
+.timeline_name.__color-1 {
+  color: #00da00;
+}
+
+.timeline_name.__color-2 {
+  color: #fd0000;
+}
+
+.timeline_time {
+  font: 18px 'MegaFonGraphikLCRegular';
+  color: #000;
+  line-height: 22px;
+}
+
+.timeline strong {
+  font-family: 'MegaFonGraphikLCBold';
+  font-weight: 400;
+}
+
+.timeline_ball {
+  background-image: url("../img/ball.svg");
+  background-position: top left;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+  background-size: contain;
+}
+
+.timeline_cart {
+  width: 25px;
+  height: 35px;
+  border-radius: 3px;
+  margin: 0 auto;
+}
+
+.timeline_cart.__yellow {
+  background: #ffff01;
+}
+
+.timeline_cart.__red {
+  background: #e40000;
+}
+
+.timeline_arrow-up {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 15px 20px 15px;
+  border-color: transparent transparent #00da00 transparent;
+  margin: 0 auto;
+}
+
+.timeline_arrow-down {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 15px 0 15px;
+  border-color: #fd0000 transparent transparent transparent;
+  margin: 0 auto;
+}
+
 @media screen and (max-width: 1170px) {
   .data-table_col-2 {
     width: 25%;
@@ -1210,5 +1318,15 @@
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: 13px;
+  }
+
+  .timeline_name {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .timeline_time {
+    font-size: 14px;
+    line-height: 18px;
   }
 }
