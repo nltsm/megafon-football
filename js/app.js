@@ -101,20 +101,124 @@ app.addModule('data-table', function () {
 		self.updateMobile();
 	}
 });
+app.addModule('datepicker', function () {
+	var self = this;
+	
+	var datepicker;
+	var eventDates = [];
+	var initialized = false;
+
+	this.init = function () {
+		datepicker = window.datepicker = $('#datepicker').datepicker({
+			onRenderCell: function (date, cellType) {
+				var currentDate = date.getDate();
+
+				if (cellType == 'day' && eventDates.indexOf(currentDate) != -1) {
+					return {
+						html: '<div class="dp-day">' + currentDate + '<span class="dp-note"></span></div>'
+					}
+				}
+			},
+			onChangeView: function (view) {
+				if (view === 'days') {
+					self.changeData();
+				}
+			},
+			onChangeMonth: function (month, year) {
+				self.changeData();
+			},
+			onSelect: function (formattedDate, date, inst) {
+				if (initialized) {
+					if (!date) {
+						date = new Date(Date.parse($('#datepicker').attr('data-selected-day')));
+					}
+					
+					self.onSelect(getFormattedDate(date));
+				}
+				initialized = true;
+			}
+		}).data('datepicker');
+		
+		self.changeData();
+		var selectedDate = $('#datepicker').attr('data-selected-day');
+		datepicker.selectDate(new Date(Date.parse(selectedDate)));
+	};
+
+	this.update = function () {
+		datepicker.update();
+	};
+	
+	this.changeData = function () {
+		var date = datepicker.date;
+		var currentMonth = date.getMonth() + 1;
+		
+		// используя ajax получить все дни, в которых есть матчи
+		// после загрузки добавить их в массив eventDates, значения от 1 до 31
+		// в переменной currentMonth находится текущий месяц от 1 до 12
+		// вызвать self.update();
+		eventDates = [1, 2, 5, 7];
+		self.update();
+	};
+	
+	this.onSelect = function (date) {
+		// либо использовать 
+		// var url = location.protocol + "//" + location.hostname + '/?day=' + date;
+		var url = 'https://ft-s.roscontent.ru/?day=' + date;
+		
+		location.href = url;
+	};
+});
+	
+function getFormattedDate(date) {
+	var day = date.getDate();
+	var month = date.getMonth() + 1;
+	var year = date.getFullYear();
+	
+	if (month < 10) {
+		month = '0' + month;
+	}
+	if (day < 10) {
+		day = '0' + day;
+	}
+	
+	return year + '-' + month + '-' + day;
+}
 app.addModule('news-slider', function () {
 	this.init = function () {
 		$('.news-slider').slick({
-			slidesToShow: 1,
+			slidesToShow: 3,
 			slidesToScroll: 1,
 			autoplay: true,
-			autoplaySpeed: 5000
+			autoplaySpeed: 5000,
+			arrows: false,
+			dots: true,
+			infinite: false,
+			
+			responsive: [
+				{
+					breakpoint: 767,
+					settings: {
+						slidesToShow: 1
+					}
+				}
+			]
 		});
 	};
 });
 app.addModule('res-tab', function () {
 	this.init = function () {
+		$('.res-tab_calendar-item a').click(function (e) {
+			e.preventDefault();
+			
+			$(this).closest('.res-tab_calendar-item').toggleClass('active');
+		});
+		
 		$('.res-tab_head-list a').click(function (e) {
 			e.preventDefault();
+			
+			if ($(this).closest('.res-tab_calendar-item').length) {
+				return;
+			}
 			
 			var block = $($(this).attr('href'));
 			
