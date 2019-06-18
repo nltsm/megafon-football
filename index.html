@@ -45,12 +45,6 @@
 </head>
 <body>
 	
-	<blockquote>
-		<span style="color: red;">НОВОЕ:</span><br>
-		1) Заменить стили<br>
-		2) На главной вместо блока .last-result_tabs скопировать блок .data-table из лиги, например
-	</blockquote>
-	
 	<h2>Страницы</h2>
 	<ol>
 		<li>
@@ -71,26 +65,9 @@
 		<li>
 			<a target="_blank" href="timeline.html">Таймлайн</a>
 		</li>
+		<li>
+			<a target="_blank" href="fine.html">Оплата штрафа</a>
+		</li>
 	</ol>
-	
-	<blockquote>
-		<span style="color: red;">ВАЖНО:</span><br>
-		
-		после клика на кнопку "показать еще", если она есть, после загрузки дополнительных матчей нужно вызвать функцию "app.getModule('data-table').reset(  $('#id-item')  )"
-		<br>
-		где #id-item - это блок с классом "data-table_item"<br>
-		можно не использовать id, а получить этот блок после клика на кнопку<br>
-		<br><br>
-		'показать еще'.click(function() {<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;var itemBlock = $(this).closest('.data-table_item')<br>
-		<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;app.getModule('data-table').reset(  itemBlock  )<br>
-		})<br>
-		
-		<br>
-		
-		это нужно, чтобы моб версия обновилась, сделал через js, чтобы в html не было дублирования данных
-			
-	</blockquote>
 </body>
 </html>

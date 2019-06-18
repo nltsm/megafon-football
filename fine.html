@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<div class="header"></div>
+
+	<div class="wrapper">
+		<div class="fine">
+			<div class="fine_content">
+				<h2 class="fine_title">Проверка и оплата штрафов</h2>
+				
+				<div class="fine_text">С помощью сервиса вы можете бесплатно онлайн проверить штрафы ГИБДД, АМПП и МАДИ, выписанные за превышение скорости, неправильную парковку и другие нарушения. Для этого понадобится номер водительского удостоверения или СТС.</div>
+				
+				<div class="fine_heading">Удостоверение водителя и СТС</div>
+				
+				<div class="fine_text">Вы можете проверить штрафы одновременно по нескольким номерам СТС и по водительскому удостоверению.</div>
+				
+				
+				<input type="text" class="fine_input" id="number-sts" placeholder="Номер свидетельства ТС">
+				<p class="error-message">Укажите действительный номер</p>
+				
+				<input type="text" class="fine_input" id="number-vu" placeholder="Номер водительского удостоверения">
+				<p class="error-message">Укажите действительный номер</p>
+				
+				<div class="fine_buttons">
+					<button class="fine_btn">Проверить штрафы</button>
+					<div class="fine_loading"></div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="fine-result">
+			<h2 class="fine-result_title">Нарушения и штрафы</h2>
+			
+			<div class="fine-result_total">
+				<div class="fine-result_text-1">
+					Сумма неоплаченных штрафов 750&#8381; <a href="">Оплатить всё</a>
+				</div>
+				
+				<div class="fine-result_text-2">
+					ВУ : 7736807168 ,  СТС : 7710404747
+				</div>
+			</div>
+			
+			<div class="fine-result_filter">
+				<div class="fine-result_filter-item">
+					<select class="fine-result_select">
+						<option value="0">Все ТС</option>
+						<option value="1">ВУ 7736807168</option>
+						<option value="2">СТС 7710404747</option>
+					</select>
+				</div>
+				
+				<div class="fine-result_filter-item">
+					<label class="checkbox">
+						<input type="checkbox" class="checkbox_input" id="unpayed">
+						<span class="checkbox_ico"></span>
+						<span class="checkbox_text">Показать только неоплаченные</span>
+					</label>
+				</div>
+			</div>
+			
+			<div class="fine-list">
+				<div data-payed="false" class="fine-list_item">
+					<div class="fine-list_left">
+						<h3 class="fine-list_head">12.09.2 - Превышение скорости движения ТС от 20 до 40 км/ч</h3>
+						
+						<div class="fine-list_info">2 июня в 12:13 по адресу: МОСКВА Г. РЯБИНОВАЯ</div>
+						
+						<div class="fine-list_hidden">
+							<table class="fine-list_table">
+								<tbody>
+									<tr>
+										<td>Номер постановления</td>
+										<td>18810177190606597915</td>
+									</tr>
+									<tr>
+										<td>Дата постановления</td>
+										<td>06.06.2019</td>
+									</tr>
+									<tr>
+										<td>Статья КоАП или закона субъекта РФ, состав правонарушения</td>
+										<td>12.09.2 - Превышение скорости движения ТС от 20 до 40 км/ч</td>
+									</tr>
+									<tr>
+										<td>Дата постановления</td>
+										<td>06.06.2019</td>
+									</tr>
+									<tr>
+										<td>Номер постановления</td>
+										<td>18810177190606597915</td>
+									</tr>
+									<tr>
+										<td>Дата постановления</td>
+										<td>06.06.2019</td>
+									</tr>
+									<tr>
+										<td>Номер постановления</td>
+										<td>18810177190606597915</td>
+									</tr>
+									<tr>
+										<td>Дата постановления</td>
+										<td>06.06.2019</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						
+						<div class="fine-list_bottom">ВУ 7736807168</div>
+					</div>
+					
+					<div class="fine-list_right">
+						<a href="" class="fine-list_button">Оплатить <s>500</s> 250&#8381;</a>
+						<p class="fine-list_pay-info">Скидка 50% до 26.06.2019</p>
+					</div>
+				</div>
+				<div data-payed="true" class="fine-list_item">
+					<div class="fine-list_left">
+						<h3 class="fine-list_head">12.09.2 - Превышение скорости движения ТС от 20 до 40 км/ч</h3>
+						
+						<div class="fine-list_info">2 июня в 12:13 по адресу: МОСКВА Г. РЯБИНОВАЯ</div>
+						
+						<div class="fine-list_hidden">
+							<table class="fine-list_table">
+								<tbody>
+									<tr>
+										<td>Номер постановления</td>
+										<td>18810177190606597915</td>
+									</tr>
+									<tr>
+										<td>Дата постановления</td>
+										<td>06.06.2019</td>
+									</tr>
+									<tr>
+										<td>Статья КоАП или закона субъекта РФ, состав правонарушения</td>
+										<td>12.09.2 - Превышение скорости движения ТС от 20 до 40 км/ч</td>
+									</tr>
+									<tr>
+										<td>Дата постановления</td>
+										<td>06.06.2019</td>
+									</tr>
+									<tr>
+										<td>Номер постановления</td>
+										<td>18810177190606597915</td>
+									</tr>
+									<tr>
+										<td>Дата постановления</td>
+										<td>06.06.2019</td>
+									</tr>
+									<tr>
+										<td>Номер постановления</td>
+										<td>18810177190606597915</td>
+									</tr>
+									<tr>
+										<td>Дата постановления</td>
+										<td>06.06.2019</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						
+						<div class="fine-list_bottom">ВУ 7736807168</div>
+					</div>
+					
+					<div class="fine-list_right">
+						<div class="fine-list_payed">Оплачен</div>
+						<p class="fine-list_pay-info">Штраф 500 &#8381;</p>
+					</div>
+				</div>
+				<div data-payed="false" class="fine-list_item">
+					<div class="fine-list_left">
+						<h3 class="fine-list_head">12.09.2 - Превышение скорости движения ТС от 20 до 40 км/ч</h3>
+						
+						<div class="fine-list_info">2 июня в 12:13 по адресу: МОСКВА Г. РЯБИНОВАЯ</div>
+						
+						<div class="fine-list_hidden">
+							<table class="fine-list_table">
+								<tbody>
+									<tr>
+										<td>Номер постановления</td>
+										<td>18810177190606597915</td>
+									</tr>
+									<tr>
+										<td>Дата постановления</td>
+										<td>06.06.2019</td>
+									</tr>
+									<tr>
+										<td>Статья КоАП или закона субъекта РФ, состав правонарушения</td>
+										<td>12.09.2 - Превышение скорости движения ТС от 20 до 40 км/ч</td>
+									</tr>
+									<tr>
+										<td>Дата постановления</td>
+										<td>06.06.2019</td>
+									</tr>
+									<tr>
+										<td>Номер постановления</td>
+										<td>18810177190606597915</td>
+									</tr>
+									<tr>
+										<td>Дата постановления</td>
+										<td>06.06.2019</td>
+									</tr>
+									<tr>
+										<td>Номер постановления</td>
+										<td>18810177190606597915</td>
+									</tr>
+									<tr>
+										<td>Дата постановления</td>
+										<td>06.06.2019</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						
+						<div class="fine-list_bottom">ВУ 7736807168</div>
+					</div>
+					
+					<div class="fine-list_right">
+						<a href="" class="fine-list_button">Оплатить <s>500</s> 250&#8381;</a>
+						<p class="fine-list_pay-info">Скидка 50% до 26.06.2019</p>
+					</div>
+				</div>
+				<div data-payed="true" class="fine-list_item">
+					<div class="fine-list_left">
+						<h3 class="fine-list_head">12.09.2 - Превышение скорости движения ТС от 20 до 40 км/ч</h3>
+						
+						<div class="fine-list_info">2 июня в 12:13 по адресу: МОСКВА Г. РЯБИНОВАЯ</div>
+						
+						<div class="fine-list_hidden">
+							<table class="fine-list_table">
+								<tbody>
+									<tr>
+										<td>Номер постановления</td>
+										<td>18810177190606597915</td>
+									</tr>
+									<tr>
+										<td>Дата постановления</td>
+										<td>06.06.2019</td>
+									</tr>
+									<tr>
+										<td>Статья КоАП или закона субъекта РФ, состав правонарушения</td>
+										<td>12.09.2 - Превышение скорости движения ТС от 20 до 40 км/ч</td>
+									</tr>
+									<tr>
+										<td>Дата постановления</td>
+										<td>06.06.2019</td>
+									</tr>
+									<tr>
+										<td>Номер постановления</td>
+										<td>18810177190606597915</td>
+									</tr>
+									<tr>
+										<td>Дата постановления</td>
+										<td>06.06.2019</td>
+									</tr>
+									<tr>
+										<td>Номер постановления</td>
+										<td>18810177190606597915</td>
+									</tr>
+									<tr>
+										<td>Дата постановления</td>
+										<td>06.06.2019</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						
+						<div class="fine-list_bottom">ВУ 7736807168</div>
+					</div>
+					
+					<div class="fine-list_right">
+						<div class="fine-list_payed">Оплачен</div>
+						<p class="fine-list_pay-info">Штраф 500 &#8381;</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		window.onload = function () {
+			$('.fine_btn').click(function () {
+				if (!fineFormValidated()) return;
+				
+				$('.fine_loading').addClass('active');
+				
+				// after loading data
+				setTimeout(function () {
+					$('.fine_loading').removeClass('active');
+					$('.fine-result').addClass('active');
+					
+					$('html, body').animate({
+						scrollTop: $('.fine-result').offset().top
+					}, 500)
+				}, 2000);
+			});
+		};
+	</script>
+
+	<div class="footer"></div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/lib.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
