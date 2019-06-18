@@ -149,8 +149,8 @@ app.addModule('datepicker', function () {
 	};
 	
 	this.changeData = function () {
-		var date = datepicker.date;
-		var currentMonth = date.getMonth() + 1;
+		var currentMonth = getFormattedDate(datepicker.date);
+		// currentMonth = 2019-06-18
 		
 		// используя ajax получить все дни, в которых есть матчи
 		// после загрузки добавить их в массив eventDates, значения от 1 до 31
