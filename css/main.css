@@ -816,17 +816,19 @@
 }
 
 .fine {
-  background-color: #f3f5f7;
-  background-image: url("../img/mainImage.png");
-  background-position: right 10px bottom;
+  background-image: url("../img/main-img.jpg");
+  background-position: center center;
   background-repeat: no-repeat;
+  background-size: cover;
   min-height: 570px;
-  background-size: 483px 570px;
+  padding: 20px;
 }
 
 .fine_content {
   width: 600px;
   padding: 20px 30px 40px 30px;
+  background-color: #f3f5f7;
+  margin: 0 auto;
 }
 
 .fine_title {
@@ -1425,10 +1427,6 @@
 
   .data-table_col-4 {
     width: 25%;
-  }
-
-  .fine {
-    background-image: none;
   }
 
   .fine_content {
