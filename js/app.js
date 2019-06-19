@@ -192,7 +192,7 @@ app.addModule('news-slider', function () {
 			autoplaySpeed: 5000,
 			arrows: false,
 			dots: true,
-			infinite: false,
+			infinite: true,
 			
 			responsive: [
 				{
