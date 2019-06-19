@@ -1009,6 +1009,12 @@
   display: block;
 }
 
+.res-tab_no-result {
+  text-align: center;
+  padding: 20px 0;
+  font: 18px 'MegaFonGraphikLCRegular';
+}
+
 .res-table_row {
   display: flex;
   align-items: center;
