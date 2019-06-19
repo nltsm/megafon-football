@@ -693,6 +693,14 @@
   font-family: 'MegaFonGraphikLCBold';
 }
 
+.-other-month- .dp-day {
+  font-family: 'MegaFonGraphikLCRegular';
+}
+
+.-other-month- .dp-note {
+  display: none;
+}
+
 .last-result_team.__cart1:before {
   content: '';
   width: 6px;
