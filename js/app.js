@@ -136,12 +136,12 @@ app.addModule('datepicker', function () {
 					self.onSelect(getFormattedDate(date));
 				}
 				initialized = true;
-			}
+			},
 		}).data('datepicker');
 		
-		self.changeData();
 		var selectedDate = $('#datepicker').attr('data-selected-day');
 		datepicker.selectDate(new Date(Date.parse(selectedDate)));
+		self.changeData();
 	};
 
 	this.update = function () {
