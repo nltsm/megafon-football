@@ -900,15 +900,8 @@
   z-index: 2;
 }
 
-.news-slider_item.__video:after {
-  position: absolute;
-  z-index: 1;
-  content: '';
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  opacity: 0.4;
+.news-slider_item.__video:hover:before {
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 .news-slider_item img {
@@ -938,6 +931,10 @@
 
 .news-slider_item:hover {
   opacity: 0.8;
+}
+
+.news-slider_item.__video:hover {
+  opacity: 1;
 }
 
 .news-slider .slick-dots {
