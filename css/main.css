@@ -1347,6 +1347,7 @@
 
   .res_right {
     padding-left: 0;
+    width: auto;
   }
 
   .res_list {
