@@ -931,7 +931,6 @@
 }
 
 .news-slider_item.__video p {
-  height: 38px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
