@@ -701,6 +701,10 @@
   display: none;
 }
 
+.datepicker--cell.-current- {
+  border: 1px solid #FF9A19;
+}
+
 .last-result_team.__cart1:before {
   content: '';
   width: 6px;
