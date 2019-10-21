@@ -406,11 +406,10 @@
 .data-table_head {
   display: flex;
   align-items: center;
-  background: #f2f2f2;
   padding-left: 5px;
-  border-bottom: 1px solid #ccc;
-  border-top: 1px solid #ccc;
-  min-height: 32px;
+  border-bottom: 1px solid #ececec;
+  border-top: 1px solid #ececec;
+  min-height: 73px;
 }
 
 .data-table_head h3 {
@@ -431,11 +430,15 @@
   font: 16px 'MegaFonGraphikLCMedium';
 }
 
+.data-table_item.active .data-table_head {
+  background: #ededed;
+  border-color: #e2e2e2;
+}
+
 .data-table_close {
   margin-left: auto;
-  width: 30px;
-  height: 30px;
-  border-left: 1px solid #ccc;
+  width: 70px;
+  height: 70px;
   position: relative;
   cursor: pointer;
 }
@@ -443,20 +446,21 @@
 .data-table_close:before {
   content: '';
   background-image: url("../img/left-arrow.svg");
-  background-position: top left;
+  background-position: center center;
   background-repeat: no-repeat;
   transform: rotate(270deg);
   background-size: 15px 15px;
   display: block;
   position: absolute;
-  width: 15px;
-  height: 15px;
-  top: 50%;
-  left: 50%;
-  margin-top: -7.5px;
-  margin-left: -7.5px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
   cursor: pointer;
-  opacity: 0.5;
+}
+
+.data-table_item.active .data-table_close:before {
+  transform: rotate(-270deg);
 }
 
 .data-table_count {
@@ -467,10 +471,6 @@
   padding: 3px 8px;
   border-radius: 4px;
   display: none;
-}
-
-.data-table_item.active .data-table_close:before {
-  transform: rotate(-270deg);
 }
 
 .data-table_body,
@@ -613,10 +613,13 @@
   position: absolute;
   top: 100%;
   right: 0;
-  width: 300px;
+  width: 320px;
+  padding: 20px;
   margin-top: 5px;
   display: none;
   z-index: 10;
+  background: #ffffff;
+  box-shadow: 0 0 5px #ccc;
 }
 
 .datepicker {
@@ -628,8 +631,10 @@
 .datepicker--cell.-selected-.-focus-,
 .datepicker--cell.-selected-,
 .datepicker--cell.-selected-.-current- {
-  background: #f58220;
-  border-color: #f58220;
+  background: #00b956;
+  border-color: #00b956;
+  border-radius: 50%;
+  width: 35px;
 }
 
 .datepicker--cell.-current- {
@@ -638,8 +643,9 @@
 
 .datepicker--cell.-focus- {
   color: #fff;
-  background: #f58220;
-  border-color: #f58220;
+  background: #00ee6f;
+  border-color: #00ee6f;
+  border-radius: 50%;
 }
 
 .datepicker--cell.-current-.-focus- {
@@ -648,10 +654,10 @@
 
 .datepicker--cell {
   height: 35px;
-  border-left: 1px solid #d7d7d7;
-  border-top: 1px solid #d7d7d7;
-  border-radius: 0;
-  flex-grow: 1;
+  width: 35px;
+  border: none;
+  border-radius: 50%;
+  margin: 0 2.5px;
 }
 
 .datepicker--content {
@@ -702,7 +708,23 @@
 }
 
 .datepicker--cell.-current- {
-  border: 1px solid #FF9A19;
+  border: 1px solid #00b956;
+}
+
+.datepicker--pointer {
+  border: none;
+}
+
+.datepicker--nav {
+  border-bottom: none;
+}
+
+.datepicker-inline .datepicker {
+  border: none;
+}
+
+.datepicker--day-name {
+  color: #000;
 }
 
 .last-result_team.__cart1:before {
@@ -961,6 +983,59 @@
   background: #f58220;
 }
 
+.player-info {
+  margin-bottom: 50px;
+}
+
+.player-info_name {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.player-info_description {
+  font-size: 15px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.player-info_row {
+  display: flex;
+  align-items: center;
+}
+
+.player-info_image {
+  width: 120px;
+  margin-right: 80px;
+  flex-shrink: 0;
+}
+
+.player-info_content {
+  width: 1%;
+  flex-grow: 1;
+}
+
+.player-info_text {
+  display: flex;
+  border-bottom: 1px solid #d3d3d8;
+  font-size: 15px;
+}
+
+.player-info_text span {
+  padding: 7px 0;
+}
+
+.player-info_heading {
+  width: 50%;
+  padding-right: 10px;
+}
+
+.player-info_value {
+  width: 50%;
+  padding-left: 10px;
+  font-weight: 700;
+}
+
 .player_command.__no-flag {
   padding-left: 23px;
 }
@@ -992,7 +1067,7 @@
   display: block;
   font: 15px 'MegaFonGraphikLCMedium';
   color: #000000;
-  background: #f2f2f2;
+  background: #eee;
   text-decoration: none;
   text-align: center;
   border: 1px solid #dfdfdf;
@@ -1000,10 +1075,16 @@
   padding: 16px 5px;
 }
 
-.res-tab_head-list li.active a,
 .res-tab_head-list li a:hover {
-  background: #00b956;
+  background: #10E272;
   color: #ffffff;
+}
+
+.res-tab_head-list li.active a {
+  border-bottom: none;
+  border-top: 2px solid #10E272;
+  background: #ffffff;
+  color: #000000;
 }
 
 .res-tab_calendar {
@@ -1405,6 +1486,7 @@
 
   .data-table_close {
     width: 50px;
+    height: 50px;
   }
 
   .data-table_count {
@@ -1457,6 +1539,18 @@
     width: 100%;
   }
 
+  .player-info_row {
+    display: block;
+  }
+
+  .player-info_image {
+    margin: 0 auto 30px;
+  }
+
+  .player-info_content {
+    width: auto;
+  }
+
   .player_heading {
     display: none;
   }
@@ -1487,9 +1581,8 @@
     font-size: 13px;
   }
 
-  .res-tab_head-list li.active a,
   .res-tab_head-list li a:hover {
-    border-color: #00b956;
+    border-color: #10E272;
   }
 
   .res-tab_head-list.__col-2 li {

@@ -109,6 +109,10 @@ app.addModule('datepicker', function () {
 	var initialized = false;
 
 	this.init = function () {
+		if (! $('#datepicker').length) {
+			return false;
+		}
+		
 		datepicker = window.datepicker = $('#datepicker').datepicker({
 			onRenderCell: function (date, cellType) {
 				var currentDate = date.getDate();
